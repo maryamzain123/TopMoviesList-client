@@ -10,7 +10,7 @@ class MovieForm extends Component {
     }
 
     handleSubmit =(e) => {
-        e.preventDEfault();
+        e.preventDefault();
         this.props.addMovie(this.state)
         this.setState({
             title: "",
@@ -21,7 +21,7 @@ class MovieForm extends Component {
     }
 
     handleChange = (e) => {
-
+debugger
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -36,6 +36,8 @@ class MovieForm extends Component {
                     <label htmlFor="content">Content</label>
                     <input onChange={this.handleChange} type="text" name="content" id="" value={this.state.content}/>
                     <br/>
+                    <label htmlFor="rating">Rating</label>
+                    <input onChange={this.handleChange} type="number" name="rating" id="" value={this.state.rating}/>
                     <button>Submit</button>
                 </form>
             </div>

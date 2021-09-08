@@ -5,6 +5,8 @@ import Home from "./components/Home"
 import Movies from "./containers/Movies"
 import MovieForm from "./components/MovieForm"
 import NavBar from "./components/NavBar"
+import MovieShow from "./components/MovieShow"
+
 
 function App() {
   return (
@@ -15,7 +17,10 @@ function App() {
       <Switch>
      <Route  path="/home" render={(routerProps => <Home {...routerProps} />)}/>
      <Route  path="/movies/new" render={(routerProps => <MovieForm {...routerProps} />)} />
+     <Route  path="/movies/:id" render={(routerProps => <MovieShow {...routerProps} />)} />
+
      <Route  path="/movies" render={(routerProps => <Movies {...routerProps} />)} />
+
      
      
      </Switch>

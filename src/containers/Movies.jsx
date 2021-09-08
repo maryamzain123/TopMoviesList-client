@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-
+import Movie from '../components/Movie';
 import { fetchMovies, addMovie } from "../actions/movies"
-import  MoviesContainer  from "./MoviesContainer"
 
 
 export class Movies extends Component {
@@ -11,12 +10,15 @@ export class Movies extends Component {
         this.props.fetchMovies()
 
     }
+
+    
     render() {
+       
         return (
             <div>
-                <h1> Movies</h1>
-                {this.props.requesting ? <h1> loading.. </h1> : <MoviesContainer movies={this.props.movies}/> }
-              
+                <h1>Movies</h1>
+                {this.props.requesting ? <h1> loading.. </h1> : this.props.movies.map(movie => <Movie movie={movie} />) }
+               
             </div>
         )
     }

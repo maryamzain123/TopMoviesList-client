@@ -1,11 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
  const Movie = ({movie}) => {
-    let {title, content} = movie
+    
+    let {id, title, content, rating} = movie
     return (
         <div>
-            <h2>{title}</h2>
-            <h2>{content}</h2>
+            <Link to={{
+                pathname:`/movies/${id}`,
+                state:{...movie}
+            }
+            }><h5>Movie Name: {title}</h5></Link>
+            <h6>rating: {rating}</h6>
+            <h6>Description: {content}</h6>
+           
         </div>
     )
 }
