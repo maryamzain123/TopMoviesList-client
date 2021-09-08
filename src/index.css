@@ -5,9 +5,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("https://www.teahub.io/photos/full/220-2205714_get-the-latest-movies-data-src-kodi-tv.jpg") 
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.home {
+background: rgb(87, 114, 111) 80%;
+color: white;
+margin-left: 400px;
+width: 500px;
+height:300px;
+padding: 30px;
+text-align: center;
+border-radius: 20px;
+-webkit-background-composite: 80%;
+font-size: 100px;
+text-shadow: 8px 8px 8px  #000000;
+
+ 
+}
+
+.nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+margin: 0;
+padding: 0;
 }

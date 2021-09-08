@@ -1,37 +1,50 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import Movie from '../components/Movie';
 import { fetchMovies, addMovie } from "../actions/movies"
-
+import { Link } from 'react-router-dom';
 
 export class Movies extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchMovies()
 
     }
 
-    
+
     render() {
-       
+
         return (
             <div>
                 <h1>Movies</h1>
-                {this.props.requesting ? <h1> loading.. </h1> : this.props.movies.map(movie => <Movie movie={movie} />) }
-               
+
+                {/* Loading... */}
+                {this.props.requesting && <h1> loading.. </h1>}
+
+                {/* Movies list */}
+                {!this.props.requesting && (
+                    <ul>
+                        {this.props.movies.map(movie => (
+                            <li>
+                                <Link to={{
+                                    pathname:`/movies/${movie.id}`,
+                                    state: {...movie}
+                                }}>{movie.title}</Link>
+                            </li>))}
+                    </ul>
+                )}
             </div>
         )
     }
 }
 
-const mapStateToProps = ({moviesReducer}) => {
+const mapStateToProps = ({ moviesReducer }) => {
     return {
         movies: moviesReducer.movies,
         requesting: moviesReducer.requesting
     }
-    
+
 }
 
 
 
-export default connect(mapStateToProps, {fetchMovies, addMovie})(Movies)
+export default connect(mapStateToProps, { fetchMovies, addMovie })(Movies)
