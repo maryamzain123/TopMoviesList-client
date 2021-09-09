@@ -16,11 +16,11 @@ function App() {
       
         <NavBar/>
         <Switch>
-          <Route  path="/home" render={(routerProps => <Home {...routerProps} />)}/>
           <Route  path="/movies/new" render={(routerProps => <MovieForm {...routerProps} />)} />
           <Route  path="/movies/:id" render={(routerProps => <MovieShow {...routerProps} />)} />
-
           <Route  path="/movies" render={(routerProps => <Movies {...routerProps} />)} />
+          <Route  path="/" render={(routerProps => <Home {...routerProps} />)}/>
+
         </Switch>
       
     

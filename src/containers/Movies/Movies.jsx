@@ -13,10 +13,10 @@ export class Movies extends Component {
 
 
     render() {
-
+        
         return (
             <div class="Movieslist" >
-                <h1>Movies List</h1>
+                <h1>Movies WatchList</h1>
 
                 {/* Loading... */}
                 {this.props.requesting && <h1> loading.. </h1>}
@@ -24,6 +24,7 @@ export class Movies extends Component {
                 {/* Movies list */}
                 {!this.props.requesting && (
                     <ul >
+                        
                         {this.props.movies.map(movie => (
                             <li>
                                 <Link to={{
