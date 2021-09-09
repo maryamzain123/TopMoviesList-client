@@ -1,3 +1,22 @@
 .navbar {
-background: darkorange;
+
+margin: 0%;
 }
+
+nav ul {
+    list-style-type: none;
+  }
+
+nav ul li {
+    float: right;
+    margin-right: 50px;
+    padding:10px;
+   
+    
+  }
+  nav ul li a {
+    
+    text-decoration: none; 
+    color:ivory;
+   
+  }

@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import Movie  from '../Movie';
+import Movie  from '../Movie/Movie';
 import './MovieShow.css'
 
 

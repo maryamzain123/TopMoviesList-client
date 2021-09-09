@@ -32,16 +32,15 @@ debugger
             <div className="form">
                 
                 <form className="forminside" onSubmit={this.handleSubmit}>
-                    <h3> Add New Movie </h3>
+                    <h3> Add Movie to your List </h3>
                     
                     <input onChange={this.handleChange} type="text" name="title" id="" placeholder="Movie Title" value={this.state.title}/>
                     <br/>
-                    
-                    <input onChange={this.handleChange} type="text" name="content" id="" placeholder="Movie Description" value={this.state.content}/>
+                    <input onChange={this.handleChange} type="number" name="rating" id="" placeholder="Rate your Movie" value={this.state.rating}/>
                     <br/>
-                    <label htmlFor="rating">Rating</label>
-                    <input onChange={this.handleChange} type="number" name="rating" id="" value={this.state.rating}/>
-                    <br/><button>Submit</button>
+                    <textarea onChange={this.handleChange} type="text" name="content" id="" placeholder="Write something about the movie..." value={this.state.content}/>
+                    <br/>
+                    <input type="submit" value="Submit"/> 
                 </form>
             </div>
         )
