@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
-import { addMovie } from "../actions/movies"
+import { addMovie } from "../../actions/movies"
+import './MovieForm.css'
 
 class MovieForm extends Component {
     state = {
@@ -28,17 +29,19 @@ debugger
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="title">Title</label>
-                    <input onChange={this.handleChange} type="text" name="title" id="" value={this.state.title}/>
+            <div className="form">
+                
+                <form className="forminside" onSubmit={this.handleSubmit}>
+                    <h3> Add New Movie </h3>
+                    
+                    <input onChange={this.handleChange} type="text" name="title" id="" placeholder="Movie Title" value={this.state.title}/>
                     <br/>
-                    <label htmlFor="content">Content</label>
-                    <input onChange={this.handleChange} type="text" name="content" id="" value={this.state.content}/>
+                    
+                    <input onChange={this.handleChange} type="text" name="content" id="" placeholder="Movie Description" value={this.state.content}/>
                     <br/>
                     <label htmlFor="rating">Rating</label>
                     <input onChange={this.handleChange} type="number" name="rating" id="" value={this.state.rating}/>
-                    <button>Submit</button>
+                    <br/><button>Submit</button>
                 </form>
             </div>
         )

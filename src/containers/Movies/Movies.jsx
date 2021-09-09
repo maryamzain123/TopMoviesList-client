@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import { fetchMovies, addMovie } from "../actions/movies"
+import { fetchMovies, addMovie } from "../../actions/movies"
 import { Link } from 'react-router-dom';
+import './Movies.css'
 
 export class Movies extends Component {
 
@@ -14,7 +15,7 @@ export class Movies extends Component {
     render() {
 
         return (
-            <div>
+            <div class="Movieslist" >
                 <h1>Movies</h1>
 
                 {/* Loading... */}
@@ -22,7 +23,7 @@ export class Movies extends Component {
 
                 {/* Movies list */}
                 {!this.props.requesting && (
-                    <ul>
+                    <ul >
                         {this.props.movies.map(movie => (
                             <li>
                                 <Link to={{
